@@ -1,0 +1,81 @@
+Step 1: Initialization
+Define control pins for LCD and input buttons.
+
+Declare vote count variables for:
+
+BJP
+
+INC
+
+AAP
+
+TMC
+
+Initialize LCD in 4-bit mode.
+
+Set button pins as input and enable internal pull-up resistors.
+
+Step 2: Display Welcome Message
+Show "Voting System" on LCD.
+
+Wait for a short delay.
+
+Clear the LCD.
+
+Step 3: Infinite Loop — Monitor Button Presses
+Repeat forever:
+
+👉 Check Each Voting Button:
+If BJP button is pressed:
+
+Increment votes_bjp
+
+Show "BJP Voted" briefly on LCD
+
+Clear the screen
+
+If INC button is pressed:
+
+Increment votes_inc
+
+Show "INC Voted" on LCD
+
+Clear the screen
+
+If AAP button is pressed:
+
+Increment votes_aap
+
+Show "AAP Voted" on LCD
+
+Clear the screen
+
+If TMC button is pressed:
+
+Increment votes_tmc
+
+Show "TMC Voted" on LCD
+
+Clear the screen
+
+👉 If Result Button Pressed:
+Clear the screen.
+
+Display first line of results: B:<bjp_count> I:<inc_count>
+
+Delay for a moment, then clear.
+
+Display second line of results: A:<aap_count> T:<tmc_count>
+
+Delay again, then clear screen.
+
+Step 4: Debounce Handling (Inside is_button_pressed)
+For every button press:
+
+Check if button is LOW (pressed).
+
+Wait briefly (debounce delay).
+
+Confirm it's still pressed.
+
+Wait until button is released before returning true.
